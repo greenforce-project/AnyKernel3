@@ -1,0 +1,33 @@
+name: Automatic pull AK3
+env:
+        GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+        GITHUB_USER: ${{ secrets.USERNAME_GITHUB }}
+        GITHUB_EMAIL: ${{ secrets.EMAIL_GITHUB }}
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 13 * * SAT'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - name: Setup minimal environment
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y git curl
+    - name: Set GitHub config
+      run: |
+        git config --global user.name "$GITHUB_USER"
+        git config --global user.email "$GITHUB_EMAIL"
+    - name: Pull origin & set origin url + token
+      run: |
+        git pull
+        git remote set-url origin https://$GITHUB_USER:$GITHUB_TOKEN@github.com/greenforce-project/AnyKernel3
+    - name: Merge AK3 changes from osm0sis:master
+      run: |
+        git fetch https://github.com/osm0sis/AnyKernel3 master
+        git merge --no-edit -m 'AK3: Merge branch `osm0sis:master` into master' FETCH_HEAD --log=1000 --signoff
+        git status && git push
