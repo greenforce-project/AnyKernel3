@@ -499,7 +499,7 @@ if [ "$(file_getprop anykernel.sh do.cleanup)" == 1 ]; then
 fi;
 
 ui_print "AnyKernel3 by osm0sis@xda-developers";
-sleep 5;
+sleep 2;
 ui_print "Error
  .Installation_Aborted_Error_7
  .Formating_System_Data_Vendor
