@@ -31,23 +31,20 @@ set_perm_recursive 0 0 755 644 $ramdisk/*;
 set_perm_recursive 0 0 750 750 $ramdisk/init* $ramdisk/sbin;
 
 # Print LOGO
-ui_print "                  ____ _____                 ";
-ui_print "                 / ___|  ___|                ";
-ui_print "                | |  _| |                    ";
-ui_print "                | |_| |  _|                  ";
-ui_print "                 \____|_|                    ";
+ui_print "    ____ _____                               ";
+ui_print "   / ___|  ___|                              ";
+ui_print "  | |  _| |       Stay Simple,               ";
+ui_print "  | |_| |  _|                 Stay Naive     ";
+ui_print "   \____|_|                                  ";
 ui_print "   ____  ____   ___      _ _____ ____ _____  ";
 ui_print "  |  _ \|  _ \ / _ \    | | ____/ ___|_   _| ";
 ui_print "  | |_) | |_) | | | |_  | |  _|| |     | |   ";
 ui_print "  |  __/|  _ <| |_| | |_| | |__| |___  | |   ";
-ui_print "  |_|   |_| \_\\___/ \___/|_____\____| |_|   ";
-ui_print "                    x x x                    ";
-ui_print "             x        x       x              ";
-ui_print "               Muhammad Fadlyas              ";
-ui_print "          x           x           x          ";
+ui_print "  |_|   |_| \_ \___/ \___/|_____\____| |_|   ";
+ui_print "                                             ";
+ui_print "                 Directed by:                ";
+ui_print "                 Mhmmd Fdlyas                ";
 ui_print "                 Zecho Satria                ";
-ui_print "             x        x       x              ";
-ui_print "                    x x x                    ";
 
 ## AnyKernel boot install
 dump_boot;
