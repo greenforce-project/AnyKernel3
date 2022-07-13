@@ -42,9 +42,13 @@ ui_print "  | |_) | |_) | | | |_  | |  _|| |     | |   ";
 ui_print "  |  __/|  _ <| |_| | |_| | |__| |___  | |   ";
 ui_print "  |_|   |_| \_ \___/ \___/|_____\____| |_|   ";
 ui_print "                                             ";
+sleep 1
 ui_print "                 Directed by:                ";
+ui_print "                                             ";
 ui_print "                 Mhmmd Fdlyas                ";
+ui_print "                      &                      ";
 ui_print "                 Zecho Satria                ";
+ui_print "                                             ";
 
 ## AnyKernel boot install
 dump_boot;
