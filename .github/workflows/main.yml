@@ -22,6 +22,12 @@ jobs:
       run: |
         git config --global user.name "$GITHUB_USER"
         git config --global user.email "$GITHUB_EMAIL"
+    - name: Set Git Hooks Change-Id
+      run: |
+        mkdir -p ~/.git/hooks
+        git config --global core.hooksPath ~/.git/hooks
+        curl -Lo ~/.git/hooks/commit-msg https://review.lineageos.org/tools/hooks/commit-msg
+        chmod u+x ~/.git/hooks/commit-msg
     - name: Pull origin & set origin url + token
       run: |
         git pull
