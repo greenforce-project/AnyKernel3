@@ -13,11 +13,12 @@ do.cleanuponabort=0
 device.name1=
 supported.versions=
 supported.patchlevels=
+supported.vendorpatchlevels=
 '; } # end properties
 
 # AnyKernel install
 # begin attributes
-attributes() {
+boot_attributes() {
     set_perm_recursive 0 0 755 644 $ramdisk/*;
     set_perm_recursive 0 0 750 750 $ramdisk/init* $ramdisk/sbin;
 } # end attributes
